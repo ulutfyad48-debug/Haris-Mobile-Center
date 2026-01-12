@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haris Mobile Center - Premium Digital Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           🔧 آسان تبدیلیاں یہاں کریں 
+        ======================================== */
+        :root {
+            --business-name: 'Haris Mobile Center';
+            --owner-name: 'Muhammad Rauf';
+            --phone-number: '+92 303 8383680';
+            --logo-image: 'https://lh3.googleusercontent.com/d/1x2zOOeo7bePYy7brcVOpjnfpOuQyKmsE';
+            --location-image: 'https://lh3.googleusercontent.com/d/11lfEXIM5h4xqwqsOPOIsVJZ0OT5-94ad';
+            --owner-image: 'https://lh3.googleusercontent.com/d/1x2zOOeo7bePYy7brcVOpjnfpOuQyKmsE';
+            --maps-link: 'https://goo.gl/maps/7k4MyFugPeizbVVe9';
+            
+            --primary: #6366f1;
+            --secondary: #ec4899;
+            --accent: #14b8a6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: var(--dark);
+        }
+        
+        .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            direction: rtl;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
+        
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 1200px;
+        }
+        
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        
+        .logo-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 180px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; }
+        }
+        
+        .logo-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            object-fit: cover;
+            background: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: white;
+            margin: 20px 0;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, #fde68a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            color: rgba(255,255,255,0.95);
+            margin: 25px 0;
+            font-weight: 300;
+        }
+        
+        .hero-badges {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: white;
+            font-size: 1rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+        }
+        
+        .badge:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+        
+        .cta-section {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255,255,255,0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 3px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, var(--dark) 0%, #1e293b 100%);
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 25px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 20px 60px rgba(99,102,241,0.3);
+        }
+        
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            filter: drop-shadow(0 5px 15px rgba(99,102,241,0.5));
+        }
+        
+        .service-card h3 {
+            color: white;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .service-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Urdu Section */
+        .urdu-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .urdu-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(50px, 50px) rotate(180deg); }
+        }
+        
+        .urdu-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .urdu-title {
+            font-size: 3.5rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            font-weight: 700;
+        }
+        
+        .urdu-box {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255,255,255,0.2);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .urdu-description {
+            font-size: 1.5rem;
+            color: white;
+            line-height: 2.5;
+            text-align: justify;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #1e293b 0%, var(--dark) 100%);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 50px rgba(99,102,241,0.3);
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .contact-card:hover::before {
+            left: 100%;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 70px rgba(99,102,241,0.5);
+        }
+        
+        .contact-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+        
+        .contact-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin: 20px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        
+        .contact-card h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .contact-card a,
+        .contact-card p {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+        }
+        
+        .contact-card a:hover {
+            text-shadow: 0 0 20px rgba(255,255,255,0.8);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 3px solid var(--primary);
+        }
+        
+        footer p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .tagline { font-size: 1.3rem; }
+            .section-title { font-size: 2.5rem; }
+            .urdu-title { font-size: 2.5rem; }
+            .urdu-description { font-size: 1.2rem; }
+            .urdu-box { padding: 30px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <div class="logo-ring"></div>
+                <img id="logoImage" alt="Logo" class="logo-img">
+            </div>
+            <h1 id="businessName">Haris Mobile Center</h1>
+            <p class="tagline">✨ Your Premium Digital Services Hub ✨</p>
+            
+            <div class="hero-badges">
+                <div class="badge">📱 Bills Payment</div>
+                <div class="badge">💳 Mobile Banking</div>
+                <div class="badge">📄 NADRA Services</div>
+                <div class="badge">📋 Documentation</div>
+            </div>
+            
+            <div class="cta-section">
+                <a id="callButton" class="btn btn-primary">
+                    <span>📞</span>
+                    <span>Call Now</span>
+                </a>
+                <a id="mapsButton" target="_blank" class="btn btn-secondary">
+                    <span>📍</span>
+                    <span>Visit Us</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Premium Services</h2>
+                <p class="section-subtitle">Everything You Need, Perfectly Delivered</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">💡</div>
+                    <h3>Bill Payments</h3>
+                    <p class="urdu-text">بجلی، گیس، ٹیلی فون اور موبائل بلز کی فوری ادائیگی</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">💰</div>
+                    <h3>Mobile Banking</h3>
+                    <p class="urdu-text">EasyPaisa, JazzCash - محفوظ اور تیز لین دین</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">📄</div>
+                    <h3>Photostat & Scanning</h3>
+                    <p class="urdu-text">اعلیٰ معیار کی فوٹو اسٹیٹ اور اسکیننگ</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🆔</div>
+                    <h3>NADRA Services and verifications</h3>
+                    <p class="urdu-text">نادرا ای سہولت - مکمل سروسز فوری دستیاب</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎓</div>
+                    <h3>Educational Services</h3>
+                    <p class="urdu-text">یونیورسٹی فیس، امتحان فیس، آن لائن ایپلیکیشنز</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">📱</div>
+                    <h3>Mobile Accessories</h3>
+                    <p class="urdu-text">موبائل گلاس، چارجرز اور ایکسیسریز</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">💻</div>
+                    <h3>Computer Services</h3>
+                    <p class="urdu-text">کمپیوٹر اور الیکٹرانکس کی تمام سہولیات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="urdu-section">
+        <div class="urdu-content">
+            <h2 class="urdu-title urdu-text">آپ کا بھروسہ مند ڈیجیٹل پارٹنر</h2>
+            <div class="urdu-box">
+                <p class="urdu-description">
+                    ہم آپ کو تمام ڈیجیٹل خدمات ایک ہی جگہ فراہم کرتے ہیں۔ بجلی، گیس، ٹیلی فون اور موبائل بلز کی فوری ادائیگی۔ EasyPaisa اور JazzCash کے ذریعے محفوظ لین دین۔ اعلیٰ معیار کی فوٹو اسٹیٹ اور اسکیننگ۔ نادرا کی مکمل خدمات بشمول CNIC کی تصدیق اور کار بائیومیٹرک ویریفیکیشن۔ یونیورسٹی اور کالج کی فیسیں، امتحان فیسیں اور آن لائن ایپلیکیشنز۔ موبائل کی تمام ایکسیسریز اور کمپیوٹر کی سہولیات۔ ہماری خدمات تیز، محفوظ اور مکمل طور پر قابل اعتماد ہیں۔
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">We're Always Here To Serve You</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">📞</div>
+                    <h3>Call Us Anytime</h3>
+                    <a id="contactPhone">+92 303 8383680</a>
+                </div>
+                
+                <div class="contact-card fade-in">
+                    <img id="locationImage" alt="Location" class="contact-image">
+                    <div class="contact-icon">📍</div>
+                    <h3>Visit Our Shop</h3>
+                    <a id="contactMaps" target="_blank">View on Google Maps</a>
+                </div>
+                
+                <div class="contact-card fade-in">
+                    <img id="ownerImage" alt="Owner" class="contact-image">
+                    <div class="contact-icon">👤</div>
+                    <h3>Contact Person</h3>
+                    <p id="ownerName">Muhammad Rauf</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 <span id="footerBusiness" class="footer-highlight">Haris Mobile Center</span></p>
+        <p>Proudly Managed by <span id="footerOwner" class="footer-highlight">Muhammad Rauf</span></p>
+        <p>✨ Your Trusted Partner for All Digital Services ✨</p>
+    </footer>
+
+    <script>
+        const cfg = {
+            businessName: getComputedStyle(document.documentElement).getPropertyValue('--business-name').replace(/'/g, '').trim(),
+            ownerName: getComputedStyle(document.documentElement).getPropertyValue('--owner-name').replace(/'/g, '').trim(),
+            phoneNumber: getComputedStyle(document.documentElement).getPropertyValue('--phone-number').replace(/'/g, '').trim(),
+            logoImage: getComputedStyle(document.documentElement).getPropertyValue('--logo-image').replace(/'/g, '').trim(),
+            locationImage: getComputedStyle(document.documentElement).getPropertyValue('--location-image').replace(/'/g, '').trim(),
+            ownerImage: getComputedStyle(document.documentElement).getPropertyValue('--owner-image').replace(/'/g, '').trim(),
+            mapsLink: getComputedStyle(document.documentElement).getPropertyValue('--maps-link').replace(/'/g, '').trim()
+        };
+        
+        document.getElementById('logoImage').src = cfg.logoImage;
+        document.getElementById('locationImage').src = cfg.locationImage;
+        document.getElementById('ownerImage').src = cfg.ownerImage;
+        document.getElementById('businessName').textContent = cfg.businessName;
+        document.getElementById('callButton').href = 'tel:' + cfg.phoneNumber.replace(/\s/g, '');
+        document.getElementById('mapsButton').href = cfg.mapsLink;
+        document.getElementById('contactPhone').textContent = cfg.phoneNumber;
+        document.getElementById('contactPhone').href = 'tel:' + cfg.phoneNumber.replace(/\s/g, '');
+        document.getElementById('contactMaps').href = cfg.mapsLink;
+        document.getElementById('ownerName').textContent = cfg.ownerName;
+        document.getElementById('footerBusiness').textContent = cfg.businessName;
+        document.getElementById('footerOwner').textContent = cfg.ownerName;
+        
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        
+        document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+    </script>
+</body>
+</html>
