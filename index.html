@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="msvalidate.01" content="901A6D8385FFD0A7BDB9FEF87896E584" />
-<meta name="google-site-verification" content="u0HQvmeVKbyBWL1oaDDylFERp4bmJKpg-IT7i_U0CmE" />
+    <meta name="msvalidate.01" content="901A6D8385FFD0A7BDB9FEF87896E584" />
+    <meta name="google-site-verification" content="u0HQvmeVKbyBWL1oaDDylFERp4bmJKpg-IT7i_U0CmE" />
+    
+    <!-- اضافی SEO Meta Tags -->
+    <meta name="description" content="Haris Mobile Center - Premium digital services including bill payments, NADRA services, mobile banking, photocopy, and computer services in Pakistan.">
+    <meta name="keywords" content="mobile center, bill payment, NADRA services, EasyPaisa, JazzCash, digital services, photocopy, scanning, Pakistan">
+    <meta name="author" content="Muhammad Rauf">
+    <meta name="robots" content="index, follow">
+    
     <title>Haris Mobile Center - Premium Digital Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ========================================
            🔧 آسان تبدیلیاں یہاں کریں 
@@ -15,6 +23,7 @@
             --business-name: 'Haris Mobile Center';
             --owner-name: 'Muhammad Rauf';
             --phone-number: '+92 303 8383680';
+            --whatsapp-number: '+923038383680';
             --logo-image: 'https://lh3.googleusercontent.com/d/1x2zOOeo7bePYy7brcVOpjnfpOuQyKmsE';
             --location-image: 'https://lh3.googleusercontent.com/d/11lfEXIM5h4xqwqsOPOIsVJZ0OT5-94ad';
             --owner-image: 'https://lh3.googleusercontent.com/d/1x2zOOeo7bePYy7brcVOpjnfpOuQyKmsE';
@@ -39,6 +48,78 @@
             background: var(--dark);
         }
         
+        /* Navigation Bar - نیا اضافہ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .nav-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            object-fit: cover;
+        }
+        
+        .nav-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.3rem;
+            background: rgba(255,255,255,0.1);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-icon {
+            background: #25D366;
+        }
+        
+        .facebook-icon {
+            background: #1877F2;
+        }
+        
         .urdu-text {
             font-family: 'Noto Nastaliq Urdu', serif;
             direction: rtl;
@@ -53,6 +134,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding-top: 80px;
         }
         
         .hero::before {
@@ -199,6 +281,16 @@
         .btn-secondary:hover {
             background: white;
             color: #667eea;
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #128C7E;
             transform: translateY(-5px) scale(1.05);
         }
         
@@ -428,6 +520,38 @@
             text-shadow: 0 0 20px rgba(255,255,255,0.8);
         }
         
+        /* Back to Top Button - نیا اضافہ */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(99,102,241,0.5);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
         /* Footer */
         footer {
             background: var(--dark);
@@ -446,6 +570,23 @@
         .footer-highlight {
             color: var(--accent);
             font-weight: 600;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .footer-link {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: var(--accent);
         }
         
         /* Animations */
@@ -469,10 +610,28 @@
             .urdu-box { padding: 30px; }
             .services-grid { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; }
+            .navbar { padding: 15px 20px; }
+            .nav-social { display: none; }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar - نیا اضافہ -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img id="navLogo" alt="Logo" class="nav-logo">
+            <div class="nav-title" id="navBusinessName">Haris Mobile Center</div>
+        </div>
+        <div class="nav-social">
+            <a id="whatsappNav" target="_blank" class="social-icon whatsapp-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a id="facebookNav" target="_blank" class="social-icon facebook-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+    </nav>
+
     <section class="hero">
         <div class="hero-content">
             <div class="logo-container">
@@ -497,6 +656,10 @@
                 <a id="mapsButton" target="_blank" class="btn btn-secondary">
                     <span>📍</span>
                     <span>Visit Us</span>
+                </a>
+                <a id="whatsappButton" target="_blank" class="btn btn-whatsapp">
+                    <span><i class="fab fa-whatsapp"></i></span>
+                    <span>WhatsApp</span>
                 </a>
             </div>
         </div>
@@ -601,32 +764,65 @@
         <p>&copy; 2025 <span id="footerBusiness" class="footer-highlight">Haris Mobile Center</span></p>
         <p>Proudly Managed by <span id="footerOwner" class="footer-highlight">Muhammad Rauf</span></p>
         <p>✨ Your Trusted Partner for All Digital Services ✨</p>
+        
+        <div class="footer-links">
+            <a href="tel:+923038383680" class="footer-link">📞 Call Now</a>
+            <a id="footerWhatsapp" target="_blank" class="footer-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a id="footerMaps" target="_blank" class="footer-link">📍 Our Location</a>
+        </div>
     </footer>
+
+    <!-- Back to Top Button - نیا اضافہ -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
     <script>
         const cfg = {
             businessName: getComputedStyle(document.documentElement).getPropertyValue('--business-name').replace(/'/g, '').trim(),
             ownerName: getComputedStyle(document.documentElement).getPropertyValue('--owner-name').replace(/'/g, '').trim(),
             phoneNumber: getComputedStyle(document.documentElement).getPropertyValue('--phone-number').replace(/'/g, '').trim(),
+            whatsappNumber: getComputedStyle(document.documentElement).getPropertyValue('--whatsapp-number').replace(/'/g, '').trim(),
             logoImage: getComputedStyle(document.documentElement).getPropertyValue('--logo-image').replace(/'/g, '').trim(),
             locationImage: getComputedStyle(document.documentElement).getPropertyValue('--location-image').replace(/'/g, '').trim(),
             ownerImage: getComputedStyle(document.documentElement).getPropertyValue('--owner-image').replace(/'/g, '').trim(),
             mapsLink: getComputedStyle(document.documentElement).getPropertyValue('--maps-link').replace(/'/g, '').trim()
         };
         
+        // Set all elements with configuration
         document.getElementById('logoImage').src = cfg.logoImage;
+        document.getElementById('navLogo').src = cfg.logoImage;
         document.getElementById('locationImage').src = cfg.locationImage;
         document.getElementById('ownerImage').src = cfg.ownerImage;
         document.getElementById('businessName').textContent = cfg.businessName;
+        document.getElementById('navBusinessName').textContent = cfg.businessName;
+        
+        // Phone links
         document.getElementById('callButton').href = 'tel:' + cfg.phoneNumber.replace(/\s/g, '');
-        document.getElementById('mapsButton').href = cfg.mapsLink;
         document.getElementById('contactPhone').textContent = cfg.phoneNumber;
         document.getElementById('contactPhone').href = 'tel:' + cfg.phoneNumber.replace(/\s/g, '');
+        
+        // Maps links
+        document.getElementById('mapsButton').href = cfg.mapsLink;
         document.getElementById('contactMaps').href = cfg.mapsLink;
+        document.getElementById('footerMaps').href = cfg.mapsLink;
+        
+        // WhatsApp links
+        const whatsappMsg = encodeURIComponent(`Hello Haris Mobile Center! I need information about your services.`);
+        const whatsappLink = `https://wa.me/${cfg.whatsappNumber.replace(/\s/g, '')}?text=${whatsappMsg}`;
+        document.getElementById('whatsappButton').href = whatsappLink;
+        document.getElementById('whatsappNav').href = whatsappLink;
+        document.getElementById('footerWhatsapp').href = whatsappLink;
+        
+        // Owner name
         document.getElementById('ownerName').textContent = cfg.ownerName;
         document.getElementById('footerBusiness').textContent = cfg.businessName;
         document.getElementById('footerOwner').textContent = cfg.ownerName;
         
+        // Facebook link (you can add your Facebook page URL here)
+        document.getElementById('facebookNav').href = '#';
+        
+        // Scroll animations
         const obs = new IntersectionObserver((entries) => {
             entries.forEach(e => {
                 if (e.isIntersecting) e.target.classList.add('visible');
@@ -634,6 +830,34 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         
         document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+        
+        // Back to Top functionality
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form submission (if you add form later)
+        const appointmentForm = document.getElementById('appointmentForm');
+        if (appointmentForm) {
+            appointmentForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Appointment request submitted! We will contact you soon.');
+                appointmentForm.reset();
+            });
+        }
     </script>
 </body>
 </html>
